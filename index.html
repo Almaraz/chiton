@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitón de Tres - Amistad Allende</title>
+    <style>
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            animation: slideIn 0.5s ease-in-out;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: white;
+        }
+
+        .title-slide {
+            background: black;
+        }
+
+        .title-slide h1 {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .title-slide p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide h1 {
+                font-size: 2.5rem;
+            }
+
+            .title-slide h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">101</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active title-slide">
+            <h1>CHITÓN DE TRES</h1>
+            <p>ENFOQUE OLYMPICS</p>
+        </div>
+
+        <!-- Slides 2-101: Word slides -->
+        <div class="slide">
+            <h1>ALLENDE</h1>
+        </div>
+        <div class="slide">
+            <h1>PIZZA HAWAIANA</h1>
+        </div>
+        <div class="slide">
+            <h1>RAPUNZEL</h1>
+        </div>
+        <div class="slide">
+            <h1>SEMÁFORO</h1>
+        </div>
+        <div class="slide">
+            <h1>STARBUCKS</h1>
+        </div>
+        <div class="slide">
+            <h1>DINOSAURIO</h1>
+        </div>
+        <div class="slide">
+            <h1>TACOS</h1>
+        </div>
+        <div class="slide">
+            <h1>UNICORNIO</h1>
+        </div>
+        <div class="slide">
+            <h1>NETFLIX</h1>
+        </div>
+        <div class="slide">
+            <h1>ARCA DE NOÉ</h1>
+        </div>
+        <div class="slide">
+            <h1>HAMBURGUESA</h1>
+        </div>
+        <div class="slide">
+            <h1>SPIDERMAN</h1>
+        </div>
+        <div class="slide">
+            <h1>AGUACATE</h1>
+        </div>
+        <div class="slide">
+            <h1>GUITARRA</h1>
+        </div>
+        <div class="slide">
+            <h1>FROZEN</h1>
+        </div>
+        <div class="slide">
+            <h1>TORTUGA NINJA</h1>
+        </div>
+        <div class="slide">
+            <h1>LIMONADA</h1>
+        </div>
+        <div class="slide">
+            <h1>TORRE EIFFEL</h1>
+        </div>
+        <div class="slide">
+            <h1>ELOTE CON CHILE</h1>
+        </div>
+        <div class="slide">
+            <h1>POKEMÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>JESÚS</h1>
+        </div>
+        <div class="slide">
+            <h1>HELICÓPTERO</h1>
+        </div>
+        <div class="slide">
+            <h1>BARBIE</h1>
+        </div>
+        <div class="slide">
+            <h1>TAMAL</h1>
+        </div>
+        <div class="slide">
+            <h1>CELULAR</h1>
+        </div>
+        <div class="slide">
+            <h1>MONTAÑA RUSA</h1>
+        </div>
+        <div class="slide">
+            <h1>JONÁS</h1>
+        </div>
+        <div class="slide">
+            <h1>NINTENDO SWITCH</h1>
+        </div>
+        <div class="slide">
+            <h1>CHURROS</h1>
+        </div>
+        <div class="slide">
+            <h1>BATMAN</h1>
+        </div>
+        <div class="slide">
+            <h1>VOLCÁN</h1>
+        </div>
+        <div class="slide">
+            <h1>DORA LA EXPLORADORA</h1>
+        </div>
+        <div class="slide">
+            <h1>TIKTOK</h1>
+        </div>
+        <div class="slide">
+            <h1>PASTOR</h1>
+        </div>
+        <div class="slide">
+            <h1>ASTRONAUTA</h1>
+        </div>
+        <div class="slide">
+            <h1>QUESADILLA</h1>
+        </div>
+        <div class="slide">
+            <h1>RAYO MCQUEEN</h1>
+        </div>
+        <div class="slide">
+            <h1>PIRATA</h1>
+        </div>
+        <div class="slide">
+            <h1>ENCHILADAS VERDES</h1>
+        </div>
+        <div class="slide">
+            <h1>YOGURT</h1>
+        </div>
+        <div class="slide">
+            <h1>SIRENA</h1>
+        </div>
+        <div class="slide">
+            <h1>TORRE DE BABEL</h1>
+        </div>
+        <div class="slide">
+            <h1>ROBOT</h1>
+        </div>
+        <div class="slide">
+            <h1>NIEVE DE LIMÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>PERRO</h1>
+        </div>
+        <div class="slide">
+            <h1>CANGURO</h1>
+        </div>
+        <div class="slide">
+            <h1>BONELESS</h1>
+        </div>
+        <div class="slide">
+            <h1>IRON MAN</h1>
+        </div>
+        <div class="slide">
+            <h1>CONEJO</h1>
+        </div>
+        <div class="slide">
+            <h1>UN CORAZÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>VIDEOJUEGOS</h1>
+        </div>
+        <div class="slide">
+            <h1>CHILAQUILES ROJOS</h1>
+        </div>
+        <div class="slide">
+            <h1>HULK</h1>
+        </div>
+        <div class="slide">
+            <h1>MARIPOSA</h1>
+        </div>
+        <div class="slide">
+            <h1>DAVID Y GOLIAT</h1>
+        </div>
+        <div class="slide">
+            <h1>YOUTUBE</h1>
+        </div>
+        <div class="slide">
+            <h1>TACOS DE TROMPO</h1>
+        </div>
+        <div class="slide">
+            <h1>ELSA</h1>
+        </div>
+        <div class="slide">
+            <h1>TIBURÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>MOISÉS</h1>
+        </div>
+        <div class="slide">
+            <h1>WHATSAPP</h1>
+        </div>
+        <div class="slide">
+            <h1>QUESABIRRIAS</h1>
+        </div>
+        <div class="slide">
+            <h1>CAPITÁN AMÉRICA</h1>
+        </div>
+        <div class="slide">
+            <h1>LEÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>NABUCODONOSOR</h1>
+        </div>
+        <div class="slide">
+            <h1>INSTAGRAM</h1>
+        </div>
+        <div class="slide">
+            <h1>JUDAS</h1>
+        </div>
+        <div class="slide">
+            <h1>THOR</h1>
+        </div>
+        <div class="slide">
+            <h1>PINGÜINO</h1>
+        </div>
+        <div class="slide">
+            <h1>ABRAHAM</h1>
+        </div>
+        <div class="slide">
+            <h1>FACEBOOK</h1>
+        </div>
+        <div class="slide">
+            <h1>BATERÍA</h1>
+        </div>
+        <div class="slide">
+            <h1>BLACK PANTHER</h1>
+        </div>
+        <div class="slide">
+            <h1>JIRAFA</h1>
+        </div>
+        <div class="slide">
+            <h1>ADÁN Y EVA</h1>
+        </div>
+        <div class="slide">
+            <h1>ELECTROLIT</h1>
+        </div>
+        <div class="slide">
+            <h1>TORTAS AHOGADAS</h1>
+        </div>
+        <div class="slide">
+            <h1>DOCTOR STRANGE</h1>
+        </div>
+        <div class="slide">
+            <h1>ELEFANTE</h1>
+        </div>
+        <div class="slide">
+            <h1>ABRAHAM</h1>
+        </div>
+        <div class="slide">
+            <h1>SPOTIFY</h1>
+        </div>
+        <div class="slide">
+            <h1>BAJO</h1>
+        </div>
+        <div class="slide">
+            <h1>ANT-MAN</h1>
+        </div>
+        <div class="slide">
+            <h1>COLIBRÍ</h1>
+        </div>
+        <div class="slide">
+            <h1>SANSÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>DISCORD</h1>
+        </div>
+        <div class="slide">
+            <h1>ELOTE EN VASO</h1>
+        </div>
+        <div class="slide">
+            <h1>FLASH</h1>
+        </div>
+        <div class="slide">
+            <h1>PULPO</h1>
+        </div>
+        <div class="slide">
+            <h1>SALOMÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>ZOOM</h1>
+        </div>
+        <div class="slide">
+            <h1>KEBAB</h1>
+        </div>
+        <div class="slide">
+            <h1>PIANO</h1>
+        </div>
+        <div class="slide">
+            <h1>KOALA</h1>
+        </div>
+        <div class="slide">
+            <h1>PABLO</h1>
+        </div>
+        <div class="slide">
+            <h1>VIOLÍN</h1>
+        </div>
+        <div class="slide">
+            <h1>SAXOFÓN</h1>
+        </div>
+        <div class="slide">
+            <h1>PANDA</h1>
+        </div>
+        <div class="slide">
+            <h1>PEDRO</h1>
+        </div>
+        <div class="slide">
+            <h1>CHATGPT</h1>
+        </div>
+        <div class="slide">
+            <h1>TOSTADAS</h1>
+        </div>
+        <div class="slide">
+            <h1>WOLVERINE</h1>
+        </div>
+        <div class="slide">
+            <h1>CEBRA</h1>
+        </div>
+        <div class="slide">
+            <h1>JOSÉ</h1>
+        </div>
+        <div class="slide">
+            <h1>MICRÓFONO</h1>
+        </div>
+        <div class="slide">
+            <h1>TROMPETA</h1>
+        </div>
+        <div class="slide">
+            <h1>DONA</h1>
+        </div>
+        <div class="slide">
+            <h1>HIPOPÓTAMO</h1>
+        </div>
+        <div class="slide">
+            <h1>ZORRO</h1>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="btn" onclick="nextSlide()">Siguiente ▶</button>
+        <button class="btn" onclick="randomSlide()">🎲 Aleatoria</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            document.getElementById('current-slide').textContent = index + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function randomSlide() {
+            // Evitar la diapositiva de título (índice 0) para palabras aleatorias
+            const randomIndex = Math.floor(Math.random() * (totalSlides - 1)) + 1;
+            currentSlide = randomIndex;
+            showSlide(currentSlide);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                previousSlide();
+            } else if (event.key === 'r' || event.key === 'R') {
+                randomSlide();
+            }
+        });
+
+        // Navegación táctil para móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function (event) {
+            touchStartX = event.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function (event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide(); // Swipe left = next slide
+            }
+            if (touchEndX > touchStartX + 50) {
+                previousSlide(); // Swipe right = previous slide
+            }
+        }
+    </script>
+</body>
+
+</html>
